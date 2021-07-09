@@ -1,17 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import BaseLayout from './components/layout/BaseLayout'
+// import './index.css';
 import reducer from './reducers'
-import Hooks from './components/Hooks'
-import Classes from './components/Classes'
+
 import {createStore} from 'redux'
 import {Provider} from 'react-redux'
 import { 
   BrowserRouter as Router, 
   Route, Switch 
 } from 'react-router-dom'
+import LeagueTable from './components/LeagueTables';
+import Schedule from './components/Schedule';
+import Roster from './components/Roster';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import FrontPage from './components/FrontPage';
+
+
 
 const saveToLocalStorage = (reduxGlobalState) =>{
   // serialization = converting js object to a string
@@ -50,13 +54,12 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <Router>
-        <BaseLayout>
-        <Switch>
-          <Route exact path="/" component={App}/>
-          <Route path="/hooks" component={Hooks}/>
-          <Route path="/class" component={Classes}/>
-        </Switch>
-        </BaseLayout>
+            <Switch>
+              <Route exact path="/" component={FrontPage}/>
+              <Route path="/table" component={LeagueTable}/>
+              <Route path="/roster" component={Roster}/>
+              <Route path="/schedule" component={Schedule}/>
+            </Switch>
       </Router>
     </Provider>
   </React.StrictMode>,

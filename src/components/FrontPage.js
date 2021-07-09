@@ -1,25 +1,15 @@
 import React from 'react'
-import { Link, Button } from 'react-router-dom'
-import {
-  ProSidebar,
-  SidebarHeader,
-  SidebarFooter,
-  SidebarContent,
-  Menu,
-  MenuItem
-} from 'react-pro-sidebar'
-import "../../css/style.css"
+
+const FrontPage = () => {
 
 
-const BaseLayout = (props) => {
   return (
-    <>
-
-<div className="background">
+    <>  
+    <div className="background">
     <div className="mainWrapper">
       <div className="left-side">
         <div className="left-side-logo">
-        <img src="newCannon.jpg" width="100%"></img>   
+        <img src="blkCannon.jpeg" width="100%"></img>   
         </div>
         <div className="left-side-nav">
           <br></br>
@@ -42,6 +32,7 @@ const BaseLayout = (props) => {
         <a href="https://www.espnfc.com">ESPN FC</a> <br></br>
         <a href="https://www.arsenal.com">Official Website</a> <br></br>
         </div>
+      
       </div>
       <div className="right-side">
       <div className="right-side-header"> 
@@ -54,22 +45,17 @@ const BaseLayout = (props) => {
         <div className="right-side-header-right">
           <img src="arsenalLogo.png" width="75px"></img>
         </div>
-        <div className="mainContent">
-          
-          
-
+      </div>
+      <div className="mainContent">
+        
+          <p className="frontPageText">If you don't believe in yourself, that you are the real deal, you might as well stay at home" - Thierry Henry</p> <br></br>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/35LeMGfzlxM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
       </div>
-      </div>
-      </div>
     </div>
-
-      
-    <br/><br/>
-      {props.children}
-    <br/><br/>
+  </div>
     </>
   )
 }
 
-export default BaseLayout
+export default FrontPage
